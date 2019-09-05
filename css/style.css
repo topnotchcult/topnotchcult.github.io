@@ -94,6 +94,29 @@ footer, header, hgroup, menu, nav, section {
   display: block; }
 
 
+  .products_info{
+    text-align: right;
+    padding-top: 70px;
+    height: 100%;
+    position: relative;
+    max-width: 500px;
+        margin-left: auto;
+  }
+  .products_info h4{
+    font-family: "helvetica-font";
+    font-weight: 500;
+    color: #000;
+    font-size: 70px;
+    line-height: 88%;
+  }
+  .products_info p{
+    font-weight: 400;
+    color: #000000;
+    font-size: 50px;
+    line-height: 88%;
+    padding-top: 36px;
+  }
+
 
 body {
   line-height: 1; }

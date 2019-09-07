@@ -273,6 +273,45 @@ font-family: "helvetica-font";
   }
 }
 
+.subscribe{
+    text-align: center;
+    padding-top: 100px;
+    height: 100%;
+    position: relative;
+  }
+  .subscribe h1{
+    text-decoration: underline;
+    font-family: "helvetica-font";
+    font-weight: bold;
+    color: #000000;
+    font-size: 2.5em;
+    line-height: 88%;
+  }
+
+  .subscribe h2{
+    text-decoration: none;
+    font-family: "helvetica-font";
+    font-weight: medium;
+    color: #000000;
+    font-size: 2em;
+    line-height: 88%;
+  }
+
+  .subscribe h3{
+    font-family: "AvenirLightt";
+    font-weight: lighter;
+    color: #000000;
+    font-size: 1em;
+    line-height: 88%;
+    padding-top: 36px;
+}
+
+@media (max-width: 992px) {
+  .subscribe {
+    margin-top: 50px;
+  }
+}
+
 th, td {
   text-align:center;
   padding: 10px

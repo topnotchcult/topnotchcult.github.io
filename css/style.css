@@ -291,9 +291,9 @@ font-family: "helvetica-font";
   .subscribe h2{
     text-decoration: none;
     font-family: "helvetica-font";
-    font-weight: medium;
     color: #000000;
-    font-size: 2em;
+    font-size: 1.9em;
+    margin-top: 5%;
     line-height: 88%;
   }
 

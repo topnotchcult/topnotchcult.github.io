@@ -97,31 +97,59 @@
 
 
 
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
 
+    <div id="error-message"></div>
 
+    <script>
+      var stripe = Stripe('pk_live_pS7ANHzbtNxzvoaXGlz7tEsS00usnOz7OE');
 
+      var checkoutButton = document.getElementById('checkout-button-plan_FmJuWS5hCAKEsF');
+      checkoutButton.addEventListener('click', function () {
+        // When the customer clicks on the button, redirect
+        // them to Checkout.
+        stripe.redirectToCheckout({
+          items: [{plan: 'plan_FmJuWS5hCAKEsF', quantity: 1}],
 
-
+          // Do not rely on the redirect to the successUrl for fulfilling
+          // purchases, customers may not always reach the success_url after
+          // a successful payment.
+          // Instead use one of the strategies described in
+          // https://stripe.com/docs/payments/checkout/fulfillment
+          successUrl: window.location.protocol + '//www.TopNotchCult.com/success',
+          cancelUrl: window.location.protocol + '//www.TopNotchCult.com/canceled',
+        })
+        .then(function (result) {
+          if (result.error) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer.
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
+      });
+    </script>
 
     <!--SUBSCRIBE-->
     <div class="subscribe">
-    
+
         <h1>Releases Coverage</h1>
-       
+
         <h2>Basic Plan</h2>
-        
+
         <h3>Take your brand to the next level with T.N.C. Releases Coverage. We cover all your releases each month and handle the marketing while you focus on the art.</h3>
-        
+
         <h2>$9.99</h2>
-       
-        <div class="product_buy"><a href="https://shopify.com" class="btn">Subscribe</a></div>
-           
+
+        <div class="product_buy"><a id="checkout-button-plan_FmJuWS5hCAKEsF" role="link" class="btn">Subscribe</a></div>
+
         <h2>Most Popluar Plan</h2>
-        
+
         <h3>All the perks of a Basic Plan plus exclusive T.N.C. Interview Coverage on a release of your choice each month to expand your reach and develop your story.</h3>
-        
+
         <h2>$19.99</h2>
-       
+
         <div class="product_buy"><a href="https://shopify.com" class="btn">Subscribe</a></div>
 
     </div>

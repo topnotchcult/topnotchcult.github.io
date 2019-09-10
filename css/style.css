@@ -227,6 +227,10 @@ font-family: "helvetica-font";
   margin-top: 5%;
 }
 
+.products td, tr{
+  display: block;
+}
+
 .products h1 {
   font-size: 2em;
   margin-top: 3%;
@@ -242,7 +246,6 @@ font-family: "helvetica-font";
   width: 300px;
   height: 300px;
 }
-
 
 .about{
     text-align: center;
@@ -338,12 +341,6 @@ th, td {
   padding: 10px
 }
 
-@media(max-width: 992px) {
-  td {
-    display: block;
-  }
-}
-
 .spacer {
   margin-top: 50px;
   visibility: hidden;
@@ -359,6 +356,13 @@ th, td {
   border-radius: 100%;
   width: 200px;
   height: 200px;
+}
+
+@media(max-width: 992px) {
+  .brand {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .brands{
@@ -790,6 +794,7 @@ close menue style
 
   .product_buy{
     width: 100%;
+
     max-width: 100%;
     text-align: center;
   }

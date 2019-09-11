@@ -227,9 +227,20 @@ font-family: "helvetica-font";
   margin-top: 5%;
 }
 
-.products td, tr{
-  display: block;
+th, td {
+  text-align:center;
+  padding: 10px
 }
+
+@media(max-width: 992px) {
+  .brands td {
+    display: run-in;
+  }
+  .products td {
+    display: block;
+  }
+}
+
 
 .products h1 {
   font-size: 2em;
@@ -334,12 +345,9 @@ font-family: "helvetica-font";
   .subscribe {
     margin-top: 50px;
   }
+
 }
 
-th, td {
-  text-align:center;
-  padding: 10px
-}
 
 .spacer {
   margin-top: 50px;
@@ -394,21 +402,7 @@ th, td {
   overflow: hidden;
 }
 
-.content .content-overlay {
-  border-radius: 100%;
-  background: rgba(0,0,0,0.7);
-  position: absolute;
-  height: 200px;
-  width: 200px;
-  left: 22%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out 0s;
-  -moz-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
-}
+
 
 .content:hover .content-overlay{
   opacity: 1;
@@ -429,6 +423,7 @@ th, td {
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
+   mix-blend-mode: difference;
 }
 
 .content:hover .content-details{
@@ -439,15 +434,18 @@ th, td {
 
 .content-details h3{
   color: #ffffff;
-  font-weight: 500;
+  font-weight: bolder;
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
+  font-size: 1.3em;
+   mix-blend-mode: difference;
 }
 
 .content-details p{
   color: #ffffff;
-  font-size: 0.8em;
+  font-size: 1.5em;
+   mix-blend-mode: difference;
 }
 
 .fadeIn-top{

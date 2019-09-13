@@ -118,6 +118,14 @@
         <h2>$19.99</h2>
 
         <div class="product_buy"><a id="checkout-button-plan_FmdcmkVQ48n8DT" role="link" class="btn">Subscribe</a></div>
+        
+        <h2>Best Pro Plan</h2>
+
+        <h3>All the perks & T.N.C. Interview Coverage on a release of your choice each month to expand your reach and develop your story.</h3>
+
+        <h2>$29.99</h2>
+
+        <div class="product_buy"><a id="checkout-button-plan_FnkB5UaVt2LqMM" role="link" class="btn">Subscribe</a></div>
 
     </div>
     <!--SUBSCRIBE-->
@@ -194,8 +202,38 @@
   });
 </script>
     <!-------------------------------------- $19.99 ------------------------------------->
+    <!-------------------------------------- $29.99 ------------------------------------->
+<div id="error-message"></div>
 
+<script>
+  var stripe = Stripe('pk_live_pS7ANHzbtNxzvoaXGlz7tEsS00usnOz7OE');
 
+  var checkoutButton = document.getElementById('checkout-button-plan_FnkB5UaVt2LqMM');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'plan_FnkB5UaVt2LqMM', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//www.TopNotchCult.com/success',
+      cancelUrl: window.location.protocol + '//www.TopNotchCult.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
+<!-------------------------------------- $29.99 ------------------------------------->
 
 
     <!--------------------------------------EVERYTHING ELSE------------------------------------->

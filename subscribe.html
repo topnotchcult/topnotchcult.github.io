@@ -117,7 +117,7 @@
 
         <h2>$15.99</h2>
 
-        <div class="product_buy"><a id="checkout-button-plan_FmdcmkVQ48n8DT" role="link" class="btn">Subscribe</a></div>
+        <div class="product_buy"><a id="checkout-button-plan_FshPJuQHxQKzHL" role="link" class="btn">Subscribe</a></div>
         
         <h2>Pro Plan</h2>
 
@@ -168,20 +168,21 @@
   });
 </script>
     <!-------------------------------------- $9.99 ------------------------------------->
-    <!-------------------------------------- $19.99 ------------------------------------->
+    <!-------------------------------------- $15.99 ------------------------------------->
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <div id="error-message"></div>
 
 <script>
+(function() {
   var stripe = Stripe('pk_live_pS7ANHzbtNxzvoaXGlz7tEsS00usnOz7OE');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_FmdcmkVQ48n8DT');
+  var checkoutButton = document.getElementById('checkout-button-plan_FshPJuQHxQKzHL');
   checkoutButton.addEventListener('click', function () {
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      items: [{plan: 'plan_FmdcmkVQ48n8DT', quantity: 1}],
+      items: [{plan: 'plan_FshPJuQHxQKzHL', quantity: 1}],
 
       // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
@@ -200,8 +201,9 @@
       }
     });
   });
+})();
 </script>
-    <!-------------------------------------- $19.99 ------------------------------------->
+    <!-------------------------------------- $15.99 ------------------------------------->
     <!-------------------------------------- $29.99 ------------------------------------->
 <div id="error-message"></div>
 

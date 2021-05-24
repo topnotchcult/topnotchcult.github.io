@@ -107,7 +107,7 @@
 
         <h3>Take your brand to the next level with T.N.C. Releases Coverage. We post all your releases on our Instagram and Website to help you gain more exposure.</h3>
 
-        <h2>$4.99</h2>
+        <h2>$9.99</h2>
 
         <div class="product_buy"><a id="checkout-button-plan_FmJuWS5hCAKEsF" role="link" class="btn">Subscribe</a></div>
 
@@ -124,6 +124,18 @@
         <h3>All the perks of the Basic and Standard plan plus exclusive marketing, content creation, and monthly analytics, all of which is directed by our certified team managers.</h3>
 
         <h2>$29.99</h2>
+
+        <div class="product_buy"><a id="checkout-button-plan_FnkB5UaVt2LqMM" role="link" class="btn">Subscribe</a></div>
+        
+        <h2>Consulting call</h2>
+
+        <h3>After having gotten hundrends of hours of experience working with small startups, we offer a 1 hour consulting call to answer any and all of your business questions</h3>
+
+        <h3>We offer all the perks from above plus a detailed SWOT analysis, a Strategy Implementation Document, Strategic Recommendations, and much more!</h3>
+        
+        <h3>Think of it as an official "Pick your brain" session where we discuss your brand vision, possible roadblocks, paths to success, accounting/bookkeeping questions, and many more aspects.</h3>
+        
+        <h2>$44.99</h2>
 
         <div class="product_buy"><a id="checkout-button-plan_FnkB5UaVt2LqMM" role="link" class="btn">Subscribe</a></div>
 
@@ -234,6 +246,38 @@
   });
 </script>
 <!-------------------------------------- $29.99 ------------------------------------->
+<!-------------------------------------- $44.99 ------------------------------------->
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_pS7ANHzbtNxzvoaXGlz7tEsS00usnOz7OE');
+
+  var checkoutButton = document.getElementById('checkout-button-plan_JXqZZFO4AXNPEC');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'plan_JXqZZFO4AXNPEC', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//TopNotchCult.com/success',
+      cancelUrl: window.location.protocol + '//TopNotchCult.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
+<!-------------------------------------- $44.99 ------------------------------------->    
 
 
     <!--------------------------------------EVERYTHING ELSE------------------------------------->
